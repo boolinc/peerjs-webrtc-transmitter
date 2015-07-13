@@ -3,5 +3,6 @@ lib
 *.log
 *.DS_Store
 
-/app/index.html
+app/js/templates
+app/index.html
 dist
