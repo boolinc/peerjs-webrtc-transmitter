@@ -1,7 +1,7 @@
 (function(){
     'use strict';
 
-    var getUserMedia = (
+    navigator.getUserMedia = (
         navigator.getUserMedia ||
         navigator.webkitGetUserMedia ||
         navigator.mozGetUserMedia
@@ -16,7 +16,9 @@
             this.load = function () {
                 var deferred = $q.defer();
 
-                getUserMedia({ video: false, audio: true }, function(stream) {
+                navigator.getUserMedia({
+                    audio: true
+                }, function(stream) {
                     deferred.resolve(stream);
                 }, function (err) {
                     deferred.reject(err);

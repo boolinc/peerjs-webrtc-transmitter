@@ -8,7 +8,7 @@
 
             this.connect = function(id){
                 var peer = new Peer(id, { key: 'evycxpu0zuissjor' });
-                return $.resolve(peer);
+                return $q.resolve(peer);
             };
         }
 
