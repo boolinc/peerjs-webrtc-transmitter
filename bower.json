@@ -1,5 +1,5 @@
 {
-  "name": "ngBool",
+  "name": "webrtc",
   "version": "0.1.0",
   "main": "index.html",
   "authors": [
@@ -16,7 +16,7 @@
   ],
   "dependencies": {
     "peerjs": "~0.3.14",
-    "angularjs": "~1.4.2",
-    "bootstrap": "~3.3.5"
+    "angular": "~1.4.2",
+    "angular-ui-router": "~0.2.15"
   }
 }

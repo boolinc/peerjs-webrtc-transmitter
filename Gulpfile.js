@@ -1,6 +1,7 @@
 var gulp                = require('gulp')
 ,   runSequence         = require('run-sequence')
 ,   browserSync         = require('browser-sync')
+,   midHistory          = require('connect-history-api-fallback')
 ,   jshint              = require('gulp-jshint')
 ,   inject              = require('gulp-inject')
 ,   wiredep             = require('wiredep').stream
@@ -14,14 +15,14 @@ var gulp                = require('gulp')
 gulp.task('webserver', function(){
     browserSync({
       server: {
-        baseDir: __dirname + '/app/',
-        directory: true
+        baseDir: __dirname + '/app/'
       },
       ghostMode: false,
       notify: false,
       debounce: 200,
       port: 8901,
-      startPath: 'index.html'
+      startPath: '/',
+      middleware: [ midHistory() ]
     });
 
     gulp.watch([
@@ -36,14 +37,13 @@ gulp.task('webserver', function(){
 gulp.task('dist-serve', function(){
     browserSync({
       server: {
-        baseDir: __dirname + '/dist/',
-        directory: true
+        baseDir: __dirname + '/dist/'
       },
       ghostMode: false,
       notify: false,
       debounce: 200,
       port: 8902,
-      startPath: 'index.html'
+      startPath: '/'
     });
 
     gulp.watch([
