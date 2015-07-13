@@ -3,7 +3,7 @@
 
     angular
         .module('webrtc', [
-            'webrtc.templates', 'webrtc.transmitter'
+            'webrtc.templates', 'webrtc.api', 'webrtc.transmitter'
         ])
         .config(config)
         .run(run);
