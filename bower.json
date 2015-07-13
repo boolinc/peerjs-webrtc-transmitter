@@ -13,5 +13,10 @@
     "app/lib",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "peerjs": "~0.3.14",
+    "angularjs": "~1.4.2",
+    "bootstrap": "~3.3.5"
+  }
 }
