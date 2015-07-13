@@ -3,7 +3,7 @@
 
     angular
         .module('webrtc', [
-            'webrtc.transmitter', 'webrtc.templates'
+            'webrtc.templates', 'webrtc.transmitter'
         ])
         .config(config)
         .run(run);
@@ -15,7 +15,7 @@
                 enabled: true,
                 requireBase: false
             });
-            $urlRouterProvider.otherwise('/');
+            $urlRouterProvider.otherwise('/transmitter');
 
         }
 
