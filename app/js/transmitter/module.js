@@ -10,10 +10,6 @@
 
             $stateProvider
                 .state('transmitter', {
-                    url: '/transmitter',
-                    abstract: true
-                })
-                .state('transmitter.home', {
                     url: '/',
                     templateUrl: 'views/transmitter/transmitter.tpl.html',
                     controller: 'TransmitterController',

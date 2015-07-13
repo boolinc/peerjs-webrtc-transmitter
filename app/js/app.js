@@ -15,7 +15,7 @@
                 enabled: true,
                 requireBase: false
             });
-            $urlRouterProvider.otherwise('/transmitter');
+            $urlRouterProvider.otherwise('/');
 
         }
 
