@@ -1,1 +1,31 @@
-Whooo!
+<nav class="top-bar" data-topbar roles="navigation">
+    <ul class="title-area">
+        <li class="name">
+            <h1><a href="/">Transmitter</a></h1>
+        </li>
+        <li class="toggle-tobpar menu-icon"><span><a href=""></a></span></li>
+    </ul>
+
+    <section class="top-bar-section">
+        <ul class="right">
+            <li><span>&copy Bool Inc</span></li>
+        </ul>
+    </section>
+</nav>
+
+<div class="row">
+    <div class="small-12 large-12 columns">
+        <table>
+            <thead>
+                <th>Client Id</th>
+                <th>Client connection date</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in vm.connectedClients">
+                    <td>{{item.id}}</td>
+                    <td>{{item.connDate | date: 'medium' }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
