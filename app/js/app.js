@@ -2,7 +2,9 @@
     'use strict';
 
     angular
-        .module('webrtc', [])
+        .module('webrtc', [
+            'webrtc.transmitter', 'webrtc.templates'
+        ])
         .config(config)
         .run(run);
 
@@ -18,7 +20,7 @@
         }
 
         function run($log) {
-            $log.info('Its running');
+            $log.info('Application successfully initialized');
         }
 
 })();
