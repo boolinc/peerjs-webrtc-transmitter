@@ -15,7 +15,7 @@
 
             Media.load().then(function (stream) {
                 vm.stream = stream;
-                return PeerConnection.connect('whoopsie');
+                return PeerConnection.connect('defaultId');
             }).then(function (peer) {
                 vm.bindEvents(peer);
             }).catch(function (err) {
@@ -25,12 +25,21 @@
 
         vm.bindEvents = function (peer) {
 
-            peer.on('connect', function (connection) {
+            peer.on('open', function (id) {
+                $log.debug('Hello, this is %s', id);
+            });
+
+            peer.on('connection', function (connection) {
+                $log.debug('Client connected: %s', connection.peer);
                 vm.connectedClients.push({
-                    id: connection.id,
+                    id: connection.peer,
                     connDate: new Date()
                 });
-                peer.call(connection.id, vm.stream);
+                peer.call(connection.peer, vm.stream);
+            });
+
+            peer.on('error', function (err) {
+                $log.error(err);
             });
 
         };
