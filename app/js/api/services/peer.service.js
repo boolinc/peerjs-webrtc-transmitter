@@ -7,10 +7,15 @@
         function PeerConnection($q, $log) {
 
             this.connect = function(id){
+                var connectionOptions = {
+                    host: 'api.tandembox.co',
+                    port: 80,
+                    path: '/peer'
+                };
                 if(!id) {
-                    return $q.resolve(new Peer({ key: 'evycxpu0zuissjor' }));
+                    return $q.resolve(new Peer(connectionOptions));
                 }
-                return $q.resolve(new Peer(id, { key: 'evycxpu0zuissjor' }));
+                return $q.resolve(new Peer(id, connectionOptions));
             };
         }
 
